@@ -1,0 +1,1151 @@
+/* General font used throughout entire site */
+@font-face {
+	font-family: "RevoDefault";
+	src: url("../fonts/DefaultFont.otf") format("opentype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Post text is handled by a Google Fonts font */
+
+/* Fonts for the different eras text in eras */
+@font-face { /* https://www.fontspace.com/super-funky-font-f100518 */
+    font-family: "80sFont";
+    src: url("../fonts/HotRush-SansStripedItalic.otf") format("truetype");
+    font-weight: auto;
+}
+@font-face { /* https://www.1001fonts.com/moliga-demo-font.html */
+    font-family: "90sFont";
+    src: url("../fonts/Poozie-JpE1E.otf") format("opentype");
+    font-weight: auto;
+}
+@font-face { /* https://gumroad.com/d/dfc088bcdf2ba8ed8b2297d2f3a02612 */
+    font-family: "00sFont";
+    src: url("../fonts/Excelorate-Font.otf") format("opentype");
+    font-weight: auto;
+}
+
+/* General CSS */
+html,
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+html {
+	background-color: rgb(255, 255, 255); /* Makes the background white throughout every other page on the site */
+	/* See .indexBackground for expection to this background color*/
+}
+
+/* header css */
+h1 {
+	font-family: "RevoDefault", sans-serif;
+	color: #84528e; /* Makes the text color a light purple */
+	font-size: 2em;
+	text-align: center;
+	margin-top: 5px;
+}
+
+h2 {
+	font-family: "RevoDefault", sans-serif;
+	color: #84528e; /* Makes the text color a light purple */
+	font-size: 1.5em;
+	text-align: center;
+	margin-top: 13px;
+}
+
+/* Index-specific CSS */
+.indexBackground {
+	background-color: #341a42; /* Makes the background a dark purple ONLY ON THE INDEX.PHP*/
+}
+.indexFooter {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: rgb(24, 9, 32); /* Makes the color of the footer a very dark purple */
+	height: 10%;
+	width: 100vw;
+	border-top-left-radius: 100%; /* curves the top left of the footer bar */
+	border-top-right-radius: 100%; /* curves the top right of the footer bar */
+	z-index: 2;
+	position: fixed;
+	bottom: 0;
+}
+.indexNavigation {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgb(24, 9, 32); /* Makes the color of the nav a very dark purple */
+	color: white;
+	width: 20%;
+	text-align: center;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	border-top-right-radius: 100%; /* curves the top right of the nav bar */
+	border-bottom-right-radius: 100%; /* curves the bottom right of the nav bar */
+}
+
+
+/* Container CSS */
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%; /* Making the container take the full width */
+
+	/* Adding padding around the container */
+	padding-top: 20px;
+	padding-right: 20px;
+	padding-bottom: 20px;
+	padding-left: 20px;
+
+	box-sizing: border-box; /* Ensuring padding is included in the element's total width/height */
+}
+.container img {
+	width: 300px;
+	height: auto;
+	margin-right: 20px;
+}
+.container form {
+	width: 50%;
+	min-width: 300px;
+}
+
+/* Form CSS */
+form label {
+	font-family: "RevoDefault", sans-serif;
+	color: #e8dd69;
+	font-size: 100%;
+	text-decoration: none;
+}
+input,
+textarea {
+	font-family: "Funnel Display", sans-serif;
+	font-size: 100%;
+	color: black;
+	text-decoration: none;
+	margin-bottom: 10px;
+	border: 10px solid #c9af2f; /* Adding a solid border with a thickness of 10px and a specific color */
+	border-radius: 20px;
+	width: 90%;
+}
+select,
+button {
+	font-family: "Funnel Display", sans-serif;
+	font-size: 100%;
+	color: black;
+	text-decoration: none;
+	margin-bottom: 10px;
+	border: 10px solid #c9af2f; /* Adding a solid border with a thickness of 10px and a specific color */
+	border-radius: 20px;
+	cursor: pointer;
+}
+button[id="loginBtn"] {
+	background-color: #341a42;
+	border: none;
+}
+button[id="profileBtn"] {
+	background-color: #341a42;
+	border: 10px solid #c9af2f;
+}
+input[type="submit"] {
+	font-family: "Funnel Display", sans-serif;
+	font-size: 100%;
+	color: black;
+	text-decoration: none;
+	margin-bottom: 10px;
+	border: 10px solid #c9af2f; /* Adding a solid border with a thickness of 10px and a specific color */
+	border-radius: 20px;
+	width: 60%;
+	cursor: pointer;
+}
+
+/* Error message CSS */
+.message-bar {
+	font-family: "RevoDefault", sans-serif;
+	font-size: 150%;
+	background-color: #eecf37;
+	color: #967d00;
+	padding: 5px;
+	border-radius: 20px;
+	position: relative;
+	left: 50%; /* Positioning the element 50% from the left of its containing element */
+	transform: translateX(-50%); /* Shifting the element back by 50% of its own width to perfectly center it */
+	width: 50%;
+	margin-bottom: 10%;
+	text-align: center;
+}
+
+/* Home-specific CSS (and some sharing with the index) */
+.homeHeader {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #341a42;
+	height: 10%;
+	width: 100%;
+	border-bottom-left-radius: 100%; /* curves the bottom left of the header */
+	border-bottom-right-radius: 100%; /* curves the bottom right of the header */
+	z-index: 2;
+}
+.homeHeader img {
+	max-height: 100%;
+	max-width: 100%;
+	height: 50px;
+	width: auto;
+	margin: auto;
+}
+.homeFooter {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: #341a42;
+	height: 10%;
+	width: 100vw;
+	border-top-left-radius: 100%; /* curves the top left of the footer bar */
+	border-top-right-radius: 100%; /* curves the top right of the footer bar */
+	position: fixed;
+	bottom: 0;
+}
+.homeFooter img,
+.indexFooter img {
+	max-height: 100%;
+	max-width: 100%;
+	height: 50px;
+	width: auto;
+}
+.homeFooter p,
+.indexFooter p {
+	font-family: "RevoDefault", sans-serif;
+	color: #84528e; /* Makes the text color a light purple */
+	font-size: 1em;
+	text-align: center;
+	margin: 0;
+}
+.homeNavigation {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #341a42;
+	color: white;
+	width: 20%;
+	text-align: center;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	border-top-right-radius: 100%; /* curves the top right of the nav bar */
+	border-bottom-right-radius: 100%; /* curves the bottom right of the nav bar */
+	z-index: 2;
+}
+.homeNavigation a,
+.indexNavigation a {
+	font-family: "RevoDefault", sans-serif;
+	color: #84528e; /* Makes the text color a light purple */
+	text-decoration: none;
+	font-size: 300%;
+	display: block;
+	margin: 5% 0;
+	transition: none;
+}
+.homeNavigation a:hover,
+.indexNavigation a:hover {
+	color: #c9af2f;
+	font-size: 400%;
+	transition: all 0.2s;
+}
+.homeNavigation img,
+.indexNavigation img {
+	max-height: 100%;
+	max-width: 100%;
+	height: 5vh;
+}
+
+/* Feed and Post CSS */
+.feed {
+	margin-left: 20%;
+	padding-bottom: 10%;
+}
+.post {
+	font-family: "RevoDefault", sans-serif;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	border: #c9af2f 10px solid;
+	color: #520847;
+	margin: 10px;
+	padding: 10px;
+	border-radius: 20px;
+}
+.post h3 {
+	font-family: "RevoDefault", sans-serif;
+	color: #84528e; /* Makes the text color a light purple */
+	font-size: 100%;
+	text-align: left;
+}
+.post p {
+	font-family: "Funnel Display", sans-serif;
+	font-style: normal;
+	text-align: center;
+}
+.post a {
+	text-decoration: none;
+	color: #84528e; /* Makes the text color a light purple */
+}
+.era {
+	display: flex;
+	flex-direction: column;
+	align-items: end;
+}
+
+/* Display CSS for: Posting, Editing, Deleting*/
+.postDisplay,
+.editDisplay,
+.delDisplay,
+.adminDisplay,
+.adminDelDisplay,
+.loginDisplay {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 3;
+	background-color: rgba(27, 0, 32, 0.9); /* Make a semi-transparent purple background to allow content to be easier seen*/
+}
+.postDisplay form,
+.editDisplay form,
+.delDisplay form,
+.adminDisplay form,
+.adminDelDisplay form,
+.loginDisplay form {
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	margin-top: 12%;
+}
+
+.delDisplay form,
+.adminDelDisplay form {
+	display: flex;
+	flex-direction: column;
+}
+
+/* Display Button CSS */
+#displayBtn {
+	display: block;
+	background: url("../img/postButton.png") no-repeat center center;
+	background-size: cover;
+	border: none;
+	cursor: pointer;
+	position: fixed;
+	font-family: "RevoDefault", sans-serif;
+	bottom: 0;
+	right: 0;
+	padding: 5%;
+	z-index: 2;
+}
+#displayBtn:hover {
+	background: url("../img/postButton-hover.png") no-repeat center center;
+	background-size: cover;
+	transition: all 0.2s;
+}
+
+
+/* Close Button CSS */
+#closeBtn,
+#closeBtn2,
+#closeBtnAdmin,
+#closeBtnLogin {
+	background: url("../img/backButton.png") no-repeat center center;
+	background-size: cover;
+	border: none;
+	cursor: pointer;
+	position: fixed;
+	font-family: "RevoDefault", sans-serif;
+	top: 10px;
+	left: 10px;
+	padding: 5%;
+}
+#closeBtn:hover,
+#closeBtn2:hover,
+#closeBtnAdmin:hover,
+#closeBtnLogin:hover {
+	background: url("../img/backButton-hover.png") no-repeat center center;
+	background-size: cover;
+	transition: all 0.2s;
+}
+
+/* Era Buttons CSS */
+.eraBtns, .profileBtns {
+	margin-left: 20%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	padding: 10px;
+	border-radius: 20px;
+}
+.eraBtns .button, .profileBtns .button {
+	font-family: "RevoDefault", sans-serif;
+	font-size: 2em;
+	background-color: #341a42;
+	color: #84528e; /* Makes the button color a light purple */
+	border: none;
+	border-radius: 20px;
+	margin-right: 20px;
+	padding: 10px;
+	text-decoration: none;
+}
+.eraBtns .button:hover, .profileBtns .button:hover {
+	background-color: #c9af2f;
+	color: #8f7d1f;
+	transition: all 0.2s;
+}
+.eraBtns .button:active, .profileBtns .button:active {
+	background-color: #6e611c;
+	color: #322c0d;
+	transition: all 0.1s;
+}
+
+/* Post Interaction Buttons CSS */
+.plays {
+	background: url("../img/plays.svg") no-repeat center center;
+	background-size: cover;
+	border: none;
+	cursor: pointer; /* Changes the cursor to a pointer (hand icon) */
+	padding: 20px;
+	border-radius: 0;
+}
+.replays {
+	background: url("../img/replays.svg") no-repeat center center;
+	background-size: cover;
+	border: none;
+	cursor: pointer; /* Changes the cursor to a pointer (hand icon) */
+	padding: 20px;
+	border-radius: 0;
+}
+.records {
+	background: url("../img/records.svg") no-repeat center center;
+	background-size: cover;
+	border: none;
+	cursor: pointer; /* Changes the cursor to a pointer (hand icon) */
+	padding: 20px;
+	border-radius: 0;
+}
+.editBtn {
+	background: url("../img/edit.svg") no-repeat center center;
+	background-size: cover;
+	border: none;
+	cursor: pointer; /* Changes the cursor to a pointer (hand icon) */
+	padding: 30px;
+	border-radius: 0;
+}
+.delBtn {
+	background: url("../img/del.svg") no-repeat center center;
+	background-size: cover;
+	border: none;
+	cursor: pointer;
+	padding: 30px;
+	border-radius: 0;
+}
+
+/* css for when buttons are hovered */
+.plays:hover,
+.replays:hover,
+.records:hover {
+	opacity: 0.3; /* Sets the element's transparency to 30% */
+	transition: all 0.1s;
+}
+.editBtn:hover {
+	filter:hue-rotate(210deg); /* Rotates the hue of colors in the element by 210 degrees */
+	background-size: cover;
+	transition: all 0.5s;
+}
+.delBtn:hover {
+	filter:hue-rotate(210deg); /* Rotates the hue of colors in the element by 210 degrees */
+	background-size: cover;
+	transition: all 0.5s;
+}
+
+/* css for when buttons are clicked */
+.playsClicked {
+	background: url("../img/plays-pressed.svg") no-repeat center center;
+	background-size: cover;
+	border: none;
+	cursor: pointer; /* Changes the cursor to a pointer (hand icon) */
+	padding: 20px;
+	border-radius: 0;
+}
+.replaysClicked {
+	background: url("../img/replays-pressed.svg") no-repeat center center;
+	background-size: cover;
+	border: none;
+	cursor: pointer; /* Changes the cursor to a pointer (hand icon) */
+	padding: 20px;
+	border-radius: 0;
+}
+.recordsClicked {
+	background: url("../img/records-pressed.svg") no-repeat center center;
+	background-size: cover;
+	border: none;
+	cursor: pointer; /* Changes the cursor to a pointer (hand icon) */
+	padding: 20px;
+	border-radius: 0;
+}
+
+/* Post Buttons Section CSS */
+.postBtns {
+	display: flex;
+	align-items: center;
+}
+.postBtns section {
+	display: flex;
+	align-items: center;
+	margin-left: auto;
+}
+.postBtns button {
+	margin-right: 10px;
+}
+.postBtns .small {
+	font-family: "RevoDefault", sans-serif;
+	margin-right: 15px;
+}
+.postBtns section button {
+	margin-right: 5px;
+}
+
+/* Profile-specific CSS */
+.profileSection {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	border-radius: 20px;
+	margin-top: -24px;
+}
+.profileInfo {
+	font-family: "RevoDefault", sans-serif;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	background-color: #c9af2f;
+	border: #c9af2f 10px solid;
+	color: #520847;
+	margin-top: -130px;
+	border-radius: 20px;
+	padding: 40px;
+	margin-left: 19.5%;
+}
+.profileInfo img {
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+}
+.profileBanner {
+	width: 100%;
+	height: 40vh;
+}
+
+/* About-specific CSS */
+.about {
+	margin-left: 10%;
+}
+.aboutSections p {
+	font-family: "Funnel Display", sans-serif;
+	font-style: normal;
+	font-size: 1.2em;
+}
+.abtSecL {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+.abtSecL h3 {
+	font-family: "RevoDefault", sans-serif;
+	color: #ffe2fc;
+	font-size: 4em;
+	text-align: center;
+	margin-right: auto;
+	width: 100%;
+	padding: 20%;
+	background-image: url("../img/tempBackground.png");
+	background-size: cover;
+	background-position: bottom;
+	clip-path: polygon(76% 0, 100% 54%, 76% 100%, 0 100%, 0 0);
+	margin-top: -50px;
+}
+.abtSecL p {
+	color: #520847;
+	margin-left: auto;
+	text-align: center;
+	margin-right: 3%;
+}
+.abtSecR {
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-between;
+	align-items: center;
+}
+.abtSecR h3 {
+	font-family: "RevoDefault", sans-serif;
+	color: #ffe2fc;
+	font-size: 4em;
+	text-align: center;
+	margin-left: auto;
+	width: 100%;
+	padding: 20%;
+	background-image: url("../img/tempBackground.png");
+	background-size: cover;
+	background-position: bottom;
+	clip-path: polygon(24% 0, 0 54%, 24% 100%, 100% 100%, 100% 0);
+}
+.abtSecR p {
+	color: #520847;
+	margin-right: auto;
+	text-align: center;
+	margin-left: 12%;
+}
+
+/* curve the background of the header*/
+.aboutHeader, .adminHeader {
+	background-color: #c9af2f;
+	padding: 2%;
+	margin-top: -23px;
+	border-bottom-left-radius: 100%; /* curves the bottom left of the header */
+    border-bottom-right-radius: 100%; /* curves the bottom right of the header */
+	position: relative;
+	z-index: 1;
+}
+.adminHeader form {
+	text-align: center;
+}
+
+/* About button graphic CSS */
+.singleButn {
+    display: flex; 
+    align-items: center; 
+	margin-left: 15%;
+
+}
+.singleButn p {
+    flex: 1; 
+    margin: 0; 
+    text-align: left; 
+	padding: 1%;
+}
+
+/* button image styling */
+.singleButn img.postIcon {
+    max-width: 18%; 
+	max-height: 18%;
+}
+.singleButn img {
+    max-width: 15%; 
+	max-height: 15%;
+}
+
+/* the about.php button icons */
+.postIcon1 {
+    background: url("../img/postButton.png") no-repeat center center;
+    background-size: cover;
+	width: 150px;
+    height: 150px;
+}
+.postIcon2 {
+    background: url("../img/backButton.png") no-repeat center center;
+    background-size: cover;
+	width: 150px;
+    height: 150px;
+}
+.postIcon3 {
+    background: url("../img/replays.svg") no-repeat center center;
+    background-size: cover;
+	width: 130px;
+    height: 130px;
+	margin-left: 10px;
+}
+.postIcon4 {
+    background: url("../img/plays.svg") no-repeat center center;
+    background-size: cover;
+	width: 130px;
+    height: 130px;
+	margin-left: 10px;
+}
+.postIcon5 {
+    background: url("../img/records.svg") no-repeat center center;
+    background-size: cover;
+	width: 130px;
+    height: 130px;
+	margin-left: 10px;
+}
+.postIcon6 {
+    background: url("../img/edit.svg") no-repeat center center;
+    background-size: cover;
+	width: 130px;
+    height: 130px;
+	margin-left: 10px;
+}
+.postIcon7 {
+    background: url("../img/del.svg") no-repeat center center;
+    background-size: cover;
+	width: 130px;
+    height: 130px;
+	margin-left: 10px;
+}
+
+/* hover effetcs for the post icons */
+.postIcon1:hover {
+    background: url("../img/postButton-hover.png") no-repeat center center;
+    background-size: cover;
+	transition: all 0.2s;
+}
+.postIcon2:hover {
+    background: url("../img/backButton-hover.png") no-repeat center center;
+    background-size: cover;
+	transition: all 0.2s;
+}
+.postIcon3:hover, .postIcon4:hover, .postIcon5:hover {
+	opacity: 0.3;
+	background-size: cover;
+	transition: all 0.2s;
+}
+
+/* change the icon of the button when its active */
+.postIcon3:active {
+	background: url("../img/replays-pressed.svg") no-repeat center center; 
+	opacity: 1;
+	background-size: cover;
+    width: 150px;
+    height: 150px;
+	transition: all 0.2s;
+}
+.postIcon4:active {
+	background: url("../img/plays-pressed.svg") no-repeat center center;
+	opacity: 1;
+	background-size: cover;
+    width: 150px;
+    height: 150px;
+	transition: all 0.2s;
+}
+.postIcon5:active {
+	background: url("../img/records-pressed.svg") no-repeat center center;
+	opacity: 1;
+	background-size: cover;
+    width: 150px;
+    height: 150px;
+	transition: all 0.2s;
+}
+
+/* delete and edit button hover effect */
+.postIcon6:hover {
+	filter:hue-rotate(210deg); /* create a rainbow effect for the hover */
+	background-size: cover;
+	transition: all 0.5s;
+}
+.postIcon7:hover {
+	filter:hue-rotate(210deg);
+	background-size: cover;
+	transition: all 0.5s;
+}
+
+/* css for the scroll bar*/
+* {
+	scrollbar-width:auto;
+	scrollbar-color: #c9af2f #341a42 ; /* change scroll bar colour to yellow and purple */
+}
+
+*::-webkit-scrollbar-track {
+	background: #c9af2f;
+}
+*::-webkit-scrollbar-thumb {
+	background-color: #341a42;
+	border-radius: 20px;
+	border: 3px solid #c9af2f;
+}
+
+/* era.php styling */
+.hidden {
+	display: none;
+}
+
+.erasInfo {
+	margin-left: 20%;
+	padding-bottom: 10vh;
+}
+.topBanner {
+    width: 116.5%;
+    padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	font-family: "RevoDefault", sans-serif;
+	color: white;
+	text-align: center;
+	font-size: 14em;
+	margin-left: -16.5%;
+}
+
+.erasInfo p {
+	color: #520847;
+	font-family: "Funnel Display", sans-serif;
+	font-size: 1.5em;
+	text-align: center;
+	padding: 5%;
+}
+
+.topBanner.era1 { /* parralax imaging for the 80s era image banner */
+	background-image: url("../img/80Banner.jpg"); 
+	background-size: cover; 
+	background-repeat: no-repeat; 
+	background-attachment: fixed; 
+	font-family: "80sFont" ;
+	color: rgb(195, 0, 255);
+	text-shadow: 15px 15px 0 #000000, -15px -15px 0 #000000, 15px -15px 0 #000000, -15px 15px 0 #000000, 0px 0px 20px #000000;
+}
+
+/* filter hover effects for each era */
+.topBanner.era2:hover{ /* filter effect for the 90s era image banner */
+	filter: saturate(500%);
+	transition: all 0.25s;
+}
+
+.topBanner.era1:hover{ /* filter effect for the 80s era image banner */
+	filter:sepia(100%);
+	transition: all 0.25s;
+}
+
+.topBanner.era3:hover{ /* filter effect for the 2000s era image banner */
+	filter:hue-rotate(-360deg);
+	transition: all 5s;
+}
+.topBanner.era3 span:hover {
+    filter:hue-rotate(360deg);
+    transition: all 5s;
+}
+.topBanner.era4:hover{ /* filter effect for the 2010s era image banner */
+	filter: invert();
+	transition: all 0.25s;
+}
+.topBanner.era5 span:hover{ /* filter effect for the 2020s era image banner */
+	filter:drop-shadow(25px 25px #c9af2f );
+	transition: all 0.25s;
+}
+.topBanner.era5 span {
+	transition: all 0.2s;
+}
+
+/* Parallax for the eras page backgrounds */
+.topBanner.era2 { /* css for the 90s info section */
+	background-image: url("../img/90Banner.jpg");
+	background-size: cover; 
+	background-repeat: no-repeat; 
+	background-attachment: fixed; 
+	font-family: "90sFont";
+	color: rgb(43, 255, 0);
+	text-shadow: 10px 10px 0 rgb(255, 0, 0), 20px 20px 0 rgb(55, 0, 255), 30px 30px 0 rgb(255, 251, 0);
+}
+
+.topBanner.era3 { /* css for the 2000s info section */
+	background-image: url("../img/2000Banner.jpg"); 
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	font-family: "00sFont";
+	color: cyan;
+	text-shadow: -15px 0 0 rgb(0, 255, 255), -30px 0 0 rgb(0, 200, 200), -45px 0 0 rgb(0, 150, 150);	
+}
+
+.topBanner.era4 { /* css for the 2010s info section */
+	background-image: url("../img/10Banner.jpg"); 
+	background-size: cover; 
+	background-repeat: no-repeat; 
+	background-attachment: fixed; 
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	text-shadow: 8px 8px 0 black, -8px -8px 0 black, 8px -8px 0 black, -8px 8px 0 black;
+}
+
+.topBanner.era5 { /* css for the 2020s info section */
+	background-image: url("../img/tempBackground.png");
+	background-size: cover; 
+	background-repeat: no-repeat; 
+	background-attachment: fixed; 
+	color: #e8dd69;
+}
+
+.navToggleBtn {
+    display: none; /* hide the navigation button for mobile */
+}
+
+.admin{
+	margin-left: 20%;
+	overflow-x: auto; /* add scroll bar to the admin table when there isnt enough room */
+}
+
+/* table in the admin section */
+table{
+	border-collapse: collapse; /* merge table borders into a single border */
+	margin-top: 25px;
+	font-size: 0.9em;
+	font-family: "Funnel Display", sans-serif;
+	width: 95%; 
+}
+
+table thead tr{
+	background-color: #c9af2f;
+	color: white;
+	text-align: left;
+	font-weight: bold;
+}
+
+table th, table td{
+	padding: 10px;
+	padding: 5px;
+    font-size: 0.8em;
+
+}
+
+tbody tr{
+	border-bottom: #84528e solid 1px;
+}
+
+/* alternate between yellow and purple for the info in the table  */
+tbody tr:nth-of-type(even){
+	background-color: #d6bfdb;
+}
+
+tbody tr:nth-of-type(odd){
+	background-color: #efe7af;
+}
+
+table tbody tr:last-of-type{
+	border-bottom: #c9af2f solid 2px;
+}
+
+.adminInfo {
+	font-family: "RevoDefault", sans-serif;
+}
+
+/* dropdowns css */
+.dropbtn {
+	background-color: #341a42;
+	color: white;
+	padding: 16px;
+	font-size: 16px;
+	width: 10%;
+	border: none;
+	cursor: pointer; /* indicate you can click on the dropdown */
+  }
+  
+  .dropdown {
+	position: relative;
+	display:flex;
+	justify-content: center;
+  }
+  
+  .dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #341a42;
+	min-width: 160px; /* add a minimum width of 160px */
+	margin-top: 50px;
+	font-family: "Funnel Display", sans-serif;
+	border-radius: 20px;
+  }
+  
+  .dropdown-content a {
+	color: white;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block; /* display as a block and take up full width */
+	border-radius: 20px;
+	text-align: start; /* align the text at the start */
+	transition: all 0.25s; 
+  }
+  
+  /* dropdown effects when hovered */
+  .dropdown-content a:hover {
+	color: #520847;
+	background-color: #fcffdc;
+	text-align: center;
+	transition: all 0.25s;
+  }
+  
+  .dropdown:hover .dropdown-content {
+	display: block;
+  }
+  
+  .dropdown:hover .dropbtn {
+	width: 15%;
+	background-color: #84528e; 
+	transition: all 0.2s;
+  }
+
+/* css for the mobile view  */
+@media only screen and (max-width: 1268px) {
+	.homeNavigation a,
+	.indexNavigation a {
+		font-size: 200%;
+	}
+	input, textarea, input[type="submit"] {
+		text-align: center;
+		font-size: 70%;
+	}
+	
+	/* mobile header display */
+	.navDisplay {
+		display: none;
+	}
+
+	/* mobile navigation button */
+    .navToggleBtn {
+        display: block;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        background-color: #84528e; 
+        color: #fff;
+        border: none;
+		border-radius: 0;
+        padding-left: 10px;
+		padding-right: 10px;
+        cursor: pointer;
+        font-size: 18px;
+		z-index: 3;
+		clip-path: polygon(100% 0, 100% 0%, 50% 100%, 50% 100%, 0 0);
+    }
+
+	/* navigation for index and other pages */
+	.indexNavigation, .homeNavigation {
+		width: 50%;
+		height:100%;
+	}
+
+	.container img{
+		display: none;
+	}
+
+	/* fixing formating for pages on mobile */
+	.feed, .erasInfo, .profileInfo, .about, .singleButn {
+		margin-left: 0%;
+		padding-bottom: 30%;
+	}
+
+	/* buttons for mobile */
+	.eraBtns, .profileBtns {
+		margin: 0 auto;
+		flex-direction: column;
+		text-align: center;
+		width: 30vw;
+		font-size: 2vw;
+	}
+
+	.eraBtns {
+		padding-top: 15vh;
+	}
+
+	/* header and footer in the non index pages */
+	.homeHeader{
+		position: fixed;
+		top: 0
+	}
+
+	.homeFooter{
+		display: flex;
+		background-color: #341a42;
+	}
+
+	/* about section */
+	.abtSecL, .abtSecR {
+		flex-direction: column;
+	}
+
+	.about {
+		padding-bottom: 10vh;
+	}
+
+	.abtSecL h3, .abtSecR h3 {
+		font-size: 3em;
+		width: 60%;
+		margin-top: -30px;
+	}
+
+	.abtSecL p, .abtSecR p {
+		margin: 2%;
+	}
+
+	/* adjustments to the banners in the eras section */
+	.topBanner {
+		width: 100%;
+		margin-left: 0%;
+		font-size: 9em;
+	}
+
+	.topBanner.era3 {
+		text-shadow: none;
+		font-size: 8vh;
+	}
+
+	/* tweak the admin and about headers for the mobile view */
+	.aboutHeader, .adminHeader{
+		padding-top: 15vh;
+		border-bottom-left-radius: 20%;
+    	border-bottom-right-radius: 20%;
+	}
+
+	/* display the form text in the center */
+	.container form {
+		text-align: center;
+	}
+
+	/* fixing the display button for mobile view */
+    #displayBtn {
+		padding: 7vh;
+		bottom: 0;
+		right: 0;
+    }
+
+	/* close buttons on mobile */
+	#closeBtn, #closeBtn2, #closeBtn3 {
+		background: url("../img/backButton.png") no-repeat center center;
+		background-size: cover;
+		border: none;
+		cursor: pointer;
+		position: fixed;
+		font-family: "RevoDefault", sans-serif;
+		padding: 7vh;
+		bottom: 0;
+		right: 0;
+		top: unset;
+		left: unset;
+	}
+	
+	/* fixing the profileInfo for mobile */
+	.profileInfo{
+		flex-direction: column;
+		align-items: center;
+	}
+
+	/* get rid of margin for the admin tab */
+	.admin{
+		margin: 0;
+	}
+
+	.message-bar{
+		margin-bottom: 15vh;
+	}
+
+	/* fix dropdown for mobile view*/
+	.dropbtn, .dropdown:hover .dropbtn {
+		width: 45%;
+	}
+
+	.homeFooter p, .indexFooter p {
+		padding-top: 8vh;
+	}
+
+
+}
