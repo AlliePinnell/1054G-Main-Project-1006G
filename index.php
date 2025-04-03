@@ -32,7 +32,8 @@
                 $checkFName = $valid->validName($fname); // Validate first name
                 $checkLName = $valid->validName($lname); // Validate last name
                 $checkEmail = $valid->validEmail($email); // Validate email format
-                $checkPassword = $valid->validPassword($psword); // Validate password strength
+                $checkPassword = $valid->validPassword($psword); // Validate password based on specific conditions
+                $checkHandle = $valid->validHandle($handle); // Validate handle format
                 $existEmail = $crud->isDuplicate('email', $email); // Check if email already exists
                 $existHandle = $crud->isDuplicate('handle', $handle); // Check if handle already exists
 
@@ -51,6 +52,9 @@
                 }
                 elseif ($checkEmail == false) {
                     $page_message = "<p>Please provide a valid email</p>";   
+                }
+                elseif ($checkHandle == false) {
+                    $page_message = "<p>Handle does not start with an @</p>";  
                 }
                 elseif ($checkPassword != '') {
                     $page_message = $checkPassword;

@@ -38,5 +38,14 @@
             }
             return false; // Return false if the name does not meet the criteria
         }
+
+        public function validHandle($handle) {
+            if ($handle[0] === '@') {
+                return true;
+            }
+            return false;
+        }
+        
+        
     }
 ?>
